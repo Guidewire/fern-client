@@ -20,9 +20,10 @@ var _ = Describe("Adder", func() {
 
 })
 var _ = ReportAfterSuite("", func(report Report) {
-	f := fern.New("Example Test",
-		fern.WithBaseURL("http://localhost:8080/"),
-	)
+    f := fern.New("Example Test",
+        fern.WithBaseURL("http://localhost:8080/"),
+		fern.WithGeminiInsights(false),
+    )
 
 	err := f.Report("example test", report)
 
